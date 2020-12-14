@@ -192,7 +192,8 @@ label {
   margin-bottom: 0.5rem; }
 
 button {
-  border-radius: 0; }
+  border-radius: 0;
+}
 
 button:focus {
   outline: 1px dotted;
@@ -1827,7 +1828,10 @@ fieldset:disabled a.btn {
 .btn-primary {
   color: #fff;
   background-color: #C6A667;
-  border-color: #C6A667; }
+  border-color: #C6A667;
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
   .btn-primary:hover {
     color: #fff;
     background-color: #ab905b;
@@ -10335,10 +10339,10 @@ nav ul li a:hover {
   color: #fff; }
 
 .w3l-main-slider .banner-info-bg h5 {
-  font-weight: 600;
+  font-weight: 300;
   color: #fff;
-  font-size: 55px;
-  line-height: 60px;
+  font-size: 25px;
+  line-height: 40px;
   margin-bottom: 40px; }
 
 .w3l-main-slider .banner-info-bg h5 span {
@@ -10346,10 +10350,10 @@ nav ul li a:hover {
 
 .w3l-main-slider .banner-info-bg p {
   color: #fff;
-  font-weight: 300;
+  font-weight: 600;
   text-transform: uppercase;
   line-height: 30px;
-  font-size: 16px;
+  font-size: 36px;
   margin-bottom: 6px;
   letter-spacing: 1px; }
 
@@ -10439,10 +10443,10 @@ a.view:hover {
 
 @media (max-width: 1200px) {
   .w3l-main-slider .banner-info-bg h5 {
-    font-size: 52px;
-    line-height: 62px; }
+    font-size: 25px;
+    line-height: 30px; }
   .w3l-main-slider .banner-info-bg p {
-    font-size: 15px; } }
+    font-size: 35px; } }
 
 @media (max-width: 992px) {
   .w3l-main-slider .banner-info-bg h5 {
@@ -10455,7 +10459,7 @@ a.view:hover {
 
 @media (max-width: 768px) {
   .w3l-main-slider .banner-info-bg p {
-    font-size: 14px; }
+    font-size: 24px; }
   .w3l-main-slider .banner-view {
     min-height: 550px;
     padding: 2em 0; }
@@ -10477,22 +10481,23 @@ a.view:hover {
   .w3l-main-slider .banner-view {
     min-height: 440px; }
   .w3l-main-slider .banner-info-bg h5 {
-    font-size: 34px;
-    line-height: 44px; } }
+    font-size: 24px;
+    line-height: 30px; } }
 
 @media (max-width: 440px) {
   .w3l-main-slider .banner-info-bg h5 {
-    font-size: 34px;
-    line-height: 44px; } }
+    font-size: 16px;
+    line-height: 24px; 
+    font-weight: 600; } }
 
 @media (max-width: 392px) {
   .w3l-main-slider .banner-info-bg h5 {
-    font-size: 32px;
+    font-size: 15px;
     line-height: 40px; } }
 
 @media (max-width: 374px) {
   .w3l-main-slider .banner-info-bg h5 {
-    font-size: 30px;
+    font-size: 14px;
     line-height: 38px; } }
 
 .shape {
