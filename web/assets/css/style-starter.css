@@ -9696,7 +9696,7 @@ p.white {
 
 @media (min-width: 1280px) {
   .container {
-    max-width: 1200px; } }
+    max-width: 1320px; } }
 
 /*-- //container --*/
 .btn-style {
@@ -9968,7 +9968,7 @@ a.dropdown-item:hover:before {
   color: var(--primary-color); }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  text-transform: capitalize;
+  text-transform: uppercase;
   transition: all 0.5s ease;
   padding: 16px 0;
   font-size: 19px;
@@ -10739,7 +10739,7 @@ p.count-text {
   padding: 4rem 0; }
 
 .w3l-footer-main .footer-14 .grid-col-4 {
-  grid-template-columns: 1fr 1fr 1fr 1fr; }
+  grid-template-columns: 1fr 1fr 1fr; }
 
 .w3l-footer-main .footer-14 .footers20 {
   background: #151617;
