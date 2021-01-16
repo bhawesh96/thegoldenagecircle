@@ -11675,8 +11675,8 @@ a.team-title span.fa {
 
 /*-- //testimonials --*/
 /*--services --*/
-.w3-services-grids {
-  align-items: center; }
+/*.w3-services-grids {
+  align-items: center; }*/
 
 .w3-services-grids .causes-grid {
   margin-bottom: 30px; }
@@ -11841,6 +11841,7 @@ a.team-title span.fa {
   filter: var(--iframe-filter); }
 
 .map-content-9 form input,
+.map-content-9 form select,
 .map-content-9 form textarea {
   background: var(--bg-color);
   border: none;
