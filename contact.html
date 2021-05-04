@@ -84,13 +84,12 @@ Author URL: http://w3layouts.com
                     <div class="col-lg-8">
                         <h3 class="title-big">Send us a Message</h3>
                         <p class="mb-4 mt-lg-0 mt-2">Your email address will not be published. Required fields are marked *</p>
-                        <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="text-right">
+                        <form class="text-right" id="contact-form">
                             <div class="form-grid">
-                                <input type="text" name="w3lName" id="w3lName" placeholder="Name*" required="">
-                                <input type="email" name="w3lSender" id="w3lSender" placeholder="Email*" required="">
-                                <input type="text" name="w3lPhone" id="w3lPhone" placeholder="Phone number*"
-                                    required="">
-                                <select class="form-control" style="height: auto;">
+                                <input type="text" name="name" id="name" placeholder="Name*" required="">
+                                <input type="email" name="email" id="email" placeholder="Email*" required="">
+                                <input type="text" name="phone" id="phone" placeholder="Phone number*"required="">
+                                <select class="form-control" name="service" id="service" style="height: auto;">
                                     <option>Choose a Service*</option>
                                     <option>ELDERLY CARE</option>
                                     <option>PARENT CARE</option>
@@ -103,15 +102,15 @@ Author URL: http://w3layouts.com
                                     <option>CUSTOM CARE PLANS</option>
                                   </select>
                             </div>
-                            <textarea name="w3lMessage" id="w3lMessage" placeholder="Message"></textarea>
+                            <textarea name="message" id="message" placeholder="Message"></textarea>
                             <button type="submit" class="btn btn-primary btn-style mt-3">Book Now</button>
                         </form>
                     </div>
                     <div class="col-lg-4 cont-details">
                         <address>
                             <h5 class="">Contact Address</h5>
-                            <p><span class="fa fa-map-marker"></span>Dehraun, India</p>
-                            <p> <a href="mailto:CONTACT@THEGOLDENAGECIRCLE.COM"><span
+                            <p><span class="fa fa-map-marker"></span>Dehradun, India</p>
+                            <p> <a href="mailto:contact@thegoldenagecircle.com"><span
                                         class="fa fa-envelope"></span>contact@thegoldenagecircle.com</a></p>
                             <p><span class="fa fa-phone"></span><a href="tel:8445029020">8445029020</a></p>
                             <!-- <a href="donate.html" class="btn btn-style btn-outline-primary mt-4">
@@ -366,6 +365,48 @@ Author URL: http://w3layouts.com
 <!--bootstrap-->
 <script src="assets/js/bootstrap.min.js"></script>
 <!-- //bootstrap-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+              jQuery(document).ready(function($) {
+                  $('#contact-form').submit(function(event) {
+                      event.preventDefault();
+                      $.ajax({
+                          url: "https://wlem42r1c3.execute-api.us-east-1.amazonaws.com/default",
+                          type: "post",
+                          crossDomain: true,
+                          data: JSON.stringify({ name: $('#name').val(),
+                                  email: $('#email').val(),
+                                  phone: $('#phone').val(),
+                                  message: $('#message').val(),
+                                  service: $('#service').val(),
+                                  to_email: 'contact@thegoldenagecircle.com'
+                                }),
+                          dataType: 'json',
+                          contentType: 'application/json; charset=utf-8',
+                          headers: {
+                                        "accept": "application/json",
+                                        "Access-Control-Allow-Origin":"*",
+                                        "Content-Type": "application/json"
+                                    },
+                          success: function (data, status) {
+                              console.log(status);
+                              if (status == "success") {
+                                alert("We have received your message. You'll hear from us soon.");
+                                  $('#contact-form').trigger("reset");
+                              }
+                              else {
+                                  alert("Sorry, couldn't send your message. Please try again later.");
+                              }
+                          }
+
+                      });
+                  });
+              });
+      </script>
+
+
 </body>
 
 </html>
