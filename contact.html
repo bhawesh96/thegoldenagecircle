@@ -144,8 +144,8 @@
                           <p>We promise we won’t spam you.</p>
                       </div>
                       <div class="form-text grid-three-column">
-                          <form action="/" method="GET">
-                              <input type="email" name=" placeholder" placeholder="Enter Your Email" required="">
+                          <form id="subscriber-form">
+                              <input type="email" name="subscriber-email" id="subscriber-email" placeholder="Enter Your Email" required="">
                               <button type="submit" class="btn btn-style btn-primary">Submit</button>
                           </form>
                       </div>
@@ -367,45 +367,7 @@
 <!-- //bootstrap-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-              jQuery(document).ready(function($) {
-                  $('#contact-form').submit(function(event) {
-                      event.preventDefault();
-                      $.ajax({
-                          url: "https://wlem42r1c3.execute-api.us-east-1.amazonaws.com/default",
-                          type: "post",
-                          crossDomain: true,
-                          data: JSON.stringify({ name: $('#name').val(),
-                                  email: $('#email').val(),
-                                  phone: $('#phone').val(),
-                                  message: $('#message').val(),
-                                  service: $('#service').val(),
-                                  to_email: 'thegoldenagecircle@gmail.com'
-                                }),
-                          dataType: 'json',
-                          contentType: 'application/json; charset=utf-8',
-                          headers: {
-                                        "accept": "application/json",
-                                        "Access-Control-Allow-Origin":"*",
-                                        "Content-Type": "application/json"
-                                    },
-                          success: function (data, status) {
-                              console.log(status);
-                              if (status == "success") {
-                                alert("We have received your message. You'll hear from us soon.");
-                                  $('#contact-form').trigger("reset");
-                              }
-                              else {
-                                  alert("Sorry, couldn't send your message. Please try again later.");
-                              }
-                          }
-
-                      });
-                  });
-              });
-      </script>
-
+<script src="assets/js/email.js"></script>
 
 </body>
 
