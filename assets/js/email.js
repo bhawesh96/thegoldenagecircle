@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
                     $('#subscriber-form').trigger("reset");
                 }
                 else {
-                    alert("Sorry, subscribe you. Please try again later.");
+                    alert("Sorry, we couldn't subscribe you. Please try again later.");
                 }
             }
 
