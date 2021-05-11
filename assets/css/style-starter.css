@@ -11916,7 +11916,7 @@ a.team-title span.fa {
 /*# sourceMappingURL=style-starter.css.map */
 
 
-.float{
+.float {
   position:fixed;
   width:40px;
   height:40px;
@@ -11931,6 +11931,15 @@ a.team-title span.fa {
   z-index:100;
 }
 
-.my-float{
+.my-float {
   margin-top:11px;
+}
+
+.incubated-image {
+  width: 60%;
+}
+
+@media (max-width: 480px) {
+  .incubated-image {
+    width: 90%; }
 }
